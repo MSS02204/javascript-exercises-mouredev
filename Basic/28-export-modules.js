@@ -1,4 +1,4 @@
-// Exportaciíon de módulos
+// Exportación de módulos
 // Un módulo es una forma de dividir nuestro código en piezas que podemos reutilizar. Nos permite organizar nuestro código en archivos separados
 
 // Un módulo es un fichero .js que contiene código que puede ser exportado e importado en otros archivos.
@@ -38,6 +38,7 @@ export class Circle {
 export default function substract(a, b) {
     return a - b
 }
+
 
 // export default function substract2(a, b) {
 //     return a - b
