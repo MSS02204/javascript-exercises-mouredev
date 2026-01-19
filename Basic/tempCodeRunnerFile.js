@@ -1,1 +1,5 @@
-5
+export default class MyClass {
+//     func() {
+//         console.log("")
+//     }
+// }

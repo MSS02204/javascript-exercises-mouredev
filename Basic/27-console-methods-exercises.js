@@ -102,5 +102,6 @@ functionOne()
 
 // trace es útil para depurar y ver el flujo de llamadas de funciones en el código.
 
+
 // 10. Utiliza clear
 // console.clear()
