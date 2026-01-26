@@ -32,6 +32,7 @@ greet2("Brais Moure")
 // Arrow functions avanzadas
 // (no crean su propio contexto, ya que lo heredan del ámbito superior)
 // - Retorno implícito
+// RETORNO IMPPLÍCITO SOLO FUNCIONA EN ARROW FUNCTIONS Y NO NECESITA DEL RETURN NI LLAVES
 console.log("\n")
 const multiply = (a, b) => a * b
 console.log(multiply(2, 5))
@@ -236,7 +237,7 @@ function processResult2(result) {
 }
 
  processData([1, 2, 3], processResult) // Imprime 6
- processData([1, 2, 3], processResult) // Imprime 6
+ processData([1, 2, 3], processResult2) // Imprime 6
  processData([1, 2, 3], (result) => {
     console.log(`Mi resultado en la arrow function es: ${result}`)
  }) // Imprime Mi resultado en la arrow function es: 6

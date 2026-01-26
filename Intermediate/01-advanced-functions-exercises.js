@@ -67,11 +67,81 @@ const numMultiplier = 5
 console.log(`Resultado de sumManyTimes: ${numMultiplier} x (1 + 2 + 3) =`, sumManyTimes(numMultiplier, 1,2,3)) // Imprime 30
 
 // 6. Crea una Callback que se invoque con el resultado de la suma de todos los números que se le pasan a una función
+function sumWithCallback(callback, ...numbers) {
+    let result = 0
+    for (let num of numbers) {
+        result += num
+    }
+    callback(result)
+}
+
+function printResult(result) {
+    console.log("El resultado de la suma es: ", result)
+}
+
+sumWithCallback(printResult, 5,4,11) // Imprime 20
+console.log("\n")
+
 
 // 7. Desarrolla una función parcial
+function operation(n1, n2, n3, txt) {
+    return `${txt} : ${(n1 * n2) / n3}`
+}
+
+function partialOperation(funct, n1) {
+    return function(n2, n3, txt) {
+        return funct(n1, n2, n3, txt)
+    }
+}
+
+const operationWith = partialOperation(operation, 10)
+console.log(operationWith(2, 5, "El resultado de la operación parcial es")) // Imprime El resultado de la operación parcial es : 4
+console.log("\n")
 
 // 8. Implementa un ejemplo que haga uso de Spread
+const strings = ["Hola", "mundo", "2026"]
+function joinStrings(str1, str2, str3) {
+    return `${str1} ${str2}, ${str3}`
+}
 
-// 9. Implementa un retorno imp´lícito
+console.log(joinStrings(...strings)) // Imprime Hola mundo, 2026
+console.log("\n")
+
+
+// 9. Implementa un retorno implícito
+const sumAndDivision = (a, b, c) => (a + c) / b
+console.log("Resultado de operación combinada con retorno implícito: ", sumAndDivision(10, 2, 6)) // Imprime 8
+console.log("\n")
+// RETORNO IMPPLÍCITO SOLO FUNCIONA EN ARROW FUNCTIONS Y NO NECESITA DEL RETURN NI LLAVES
+
 
 // 10. Haz uso del this léxico
+const myObject = {
+    name: "MiObjeto", 
+    regularFunction: function() {
+        console.log(`Hola desde la función regular de ${this.name}`) // this apunta a myObject
+    },
+    arrowFunction: () => {
+        console.log(`Hola desde la función arrow de ${this.name}`) // this no apunta a myObject, sino al contexto superior (global en este caso)
+    }
+}
+
+myObject.regularFunction() // Imprime Hola desde la función regular de MiObjeto
+myObject.arrowFunction(); // Imprime Hola desde la función arrow de undefined
+// se debe poner el ; para delimitar la expresión anterior de la siguiente línea
+console.log("\n")
+
+
+const person = {
+    name: "John", 
+    greet: function() {
+        console.log(`Hola, mi nombre es ${this.name}`); // this apunta a person
+    },
+    greet2: () => {
+        console.log(`Hola, mi nombre es ${this.name}`); // this apunta a person
+    }
+};
+person.greet(); // Imprime Hola, mi nombre es John.
+person.greet2(); // Imprime Hola, mi nombre es undefined. ya que las arrow functions no tienen su propio this
+const greetFunction = person.greet
+greetFunction() // Imprime Hola, mi nombre es undefined., ya que this apunta al contexto global por perder el contexto del objeto person
