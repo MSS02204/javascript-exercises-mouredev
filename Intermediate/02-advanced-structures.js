@@ -49,6 +49,7 @@ console.log(flatArray) // Imprime [1, 2, 3, 4]
 console.log("\n")
 
 
+
 // flatMap (mapea, por el criterio que le das al aplanamiento) y flat (aplana el array resultante en un solo nivel)
 let phrases = ["Hola mundo", "Adiós mundo"]
 let words = phrases.flatMap(phrase => phrase.split(" ")) // split divide un string en un array de strings, aqui lo hace por cada espacio en blanco
@@ -169,7 +170,7 @@ let myMap = new Map([
     ["age", 37]
 ])
 console.log(myMap) // Imprime Map(2) { 'name' => 'MoureDev', 'age' => 37 }
-myMap.forEach((value, key) => console.log(`${key}: ${value}`)) //el primer parametro es el valor, no la clave
+myMap.forEach((value, key) => console.log(`${key}: ${value}`)) //el primer parametro es el valor, no la clave. Imprime name: MoureDev age: 37 en líneas separadas
 console.log("\n")
 
 // Conversión 
