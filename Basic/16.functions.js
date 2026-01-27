@@ -129,9 +129,9 @@ myArray.forEach(function(value) {
 // forma corta con arrow function
 myArray.forEach((value) => console.log(value)) // Imprime 1 2 3 4 en líneas separadas
 
-mySet.forEach((value) => console.log(value))
+mySet.forEach((value) => console.log(value)) // Imprime los valores del set en líneas separadas
 
-myMap.forEach((value) => console.log(value))
+myMap.forEach((value) => console.log(value)) // Imprime los valores del map en líneas separadas
 
 // forEach son mucho más concisos, legibles que ejecutar un for o un while.
 // forEach no pueden detenerse con el break o con el continue, no retorna un nuevo array como en otros casos.
