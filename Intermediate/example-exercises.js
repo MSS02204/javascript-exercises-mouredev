@@ -159,20 +159,20 @@ myTitle.textContent = "¡Ganador del AO!"
 
 
 // 10.
-// window.onload = function() {
-//     const btn = document.createElement("button")
-//     btn.id = "backgroundBtn"
-//     btn.textContent = "Cambiar color de fondo"
-//     document.body.appendChild(btn)
+window.onload = function() {
+    const btn = document.createElement("button")
+    btn.id = "backgroundBtn"
+    btn.textContent = "Cambiar color de fondo"
+    document.body.appendChild(btn)
     
     
-//     btn.addEventListener("click", () => {
-//         const myBody = document.querySelector("body")
-//         myBody.style.backgroundColor = "yellow"
-//     })
+    btn.addEventListener("click", () => {
+        const myBody = document.querySelector("body")
+        myBody.style.backgroundColor = "yellow"
+    })
 
-//     // // Otra forma de hacerlo:
-//     // btn.onclick = function() {
-//     //     document.body.style.backgroundColor = "lightblue"
-//     // }
-// }
+    // // Otra forma de hacerlo:
+    // btn.onclick = function() {
+    //     document.body.style.backgroundColor = "lightblue"
+    // }
+}
